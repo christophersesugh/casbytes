@@ -17,8 +17,7 @@
     "cypress:run": "cypress run",
     "prettier:write": "npx prettier --write app/",
     "prettier:check": "npx prettier . --check",
-    "lint": "npx eslint .",
-    "prepare": "husky install"
+    "lint": "npx eslint ."
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
