@@ -6,10 +6,10 @@ module.exports = {
     "jest",
     "cypress",
   ],
-  env: {
-    "jest/globals": true,
-    "cypress/globals": true,
-  },
+  // env: {
+  //   "jest/globals": true,
+  //   "cypress/globals": true,
+  // },
   rules: {
     "jest/no-disabled-tests": "warn",
     "jest/no-focused-tests": "error",

@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Home } from "~/components/home";
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,5 +9,5 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  return <h1>CASBytes</h1>;
+  return <Home />;
 }
