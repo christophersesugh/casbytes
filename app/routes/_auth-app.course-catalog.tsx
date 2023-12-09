@@ -1,5 +1,6 @@
 import React from "react";
+import { Container } from "~/components/container";
 
 export default function CourseCatalog() {
-  return <div>_auth-app.course-catalog</div>;
+  return <Container>some</Container>;
 }

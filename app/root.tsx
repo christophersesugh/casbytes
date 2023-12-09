@@ -10,6 +10,11 @@ import stylesheet from "~/tailwind.css";
 import { RootLayout } from "./components/layouts";
 
 export const links: LinksFunction = () => [
+  {
+    rel: "icon",
+    href: "/favicon.png",
+    type: "image/png",
+  },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
@@ -32,7 +37,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-slate-100">
         <RootLayout />
         <ScrollRestoration />
         <Scripts />
