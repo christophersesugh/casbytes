@@ -1,4 +1,3 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
 import {
   Links,
@@ -11,6 +10,16 @@ import stylesheet from "~/tailwind.css";
 import { RootLayout } from "./components/layouts";
 
 export const links: LinksFunction = () => [
+  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  {
+    rel: "preconnect",
+    href: "https://fonts.gstatic.com",
+    crossOrigin: "anonymous",
+  },
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Fira+Code&family=Mulish&display=swap",
+  },
   { rel: "stylesheet", href: stylesheet },
 ];
 
