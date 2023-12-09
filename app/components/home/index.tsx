@@ -1,5 +1,5 @@
 import React from "react";
 
 export function Home() {
-  return <div>index</div>;
+  return <div className="bg-red-500">index</div>;
 }
