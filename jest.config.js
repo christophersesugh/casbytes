@@ -1,14 +1,10 @@
 export default {
-  collectCoverageFrom: [
-    "**/*.{js,jsx,ts,tsx}",
-    "!**/*.d.ts",
-    "!**/node_modules/**",
-  ],
+  collectCoverageFrom: ["**/*.{ts,tsx}", "!**/*.d.ts", "!**/node_modules/**"],
   moduleNameMapper: {
     // Handle absolute imports in Remix
     "~/(.*)": "<rootDir>/app/$1",
   },
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   testPathIgnorePatterns: [
     "<rootDir>/node_modules/",
     "<rootDir>/.cache/",

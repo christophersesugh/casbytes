@@ -3,8 +3,8 @@
     "remix.env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "./jest.setup.ts",
-    "jest.config.js"
+    "postcss.config.js",
+    "jest.setup.js"
   ],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
@@ -14,7 +14,6 @@
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "target": "ES2022",
-    "module": "ESNext",
     "strict": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
@@ -22,7 +21,6 @@
     "paths": {
       "~/*": ["./app/*"]
     },
-    "types": ["jest", "@testing-library/jest-dom"],
 
     // Remix takes care of building everything in `remix build`.
     "noEmit": true

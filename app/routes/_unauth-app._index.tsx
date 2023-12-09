@@ -1,12 +1,13 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Home } from "~/components/home";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
+    { title: "CASBytes" },
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
 
 export default function Index() {
-  return <h1>CASBytes</h1>;
+  return <Home />;
 }
