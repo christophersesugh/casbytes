@@ -9,6 +9,7 @@ import { Badge } from "~/components/custom-badge";
 type MainNavProps = {
   menuItems?: { label: string; href: string }[];
   isOpen: boolean;
+  authApp: boolean;
   handleNavToggle: () => void;
 };
 
@@ -17,13 +18,12 @@ type ItemProps = {
   href: string;
 };
 
-export function MainNav({ isOpen, menuItems, handleNavToggle }: MainNavProps) {
-  const matches = useMatches();
-  const user = true;
-
-  const authApp = matches.some((match) =>
-    match.id.includes("_auth-app") && user ? true : false,
-  );
+export function MainNav({
+  isOpen,
+  menuItems,
+  authApp,
+  handleNavToggle,
+}: MainNavProps) {
   return (
     <nav className={cn("bg-[#E1F4FF]")}>
       <div className="flex items-center justify-between py-8 px-4 xl:px-0 max-w-6xl mx-auto">

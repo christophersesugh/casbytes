@@ -26,11 +26,11 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      // https://res.cloudinary.com/christo/image/upload/v1692212985/bg_miwuvn.svg
+      // https://res.cloudinary.com/christo/image/upload/v1692213143/CASBytes/bg2_qxciei.svg
       backgroundImage: {
-        "header-1":
-          "url('https://res.cloudinary.com/christo/image/upload/v1692212985/bg_miwuvn.svg')",
-        "header-2":
-          "url('https://res.cloudinary.com/christo/image/upload/v1692213143/CASBytes/bg2_qxciei.svg')",
+        "header-1": "url('/bg1.svg')",
+        "header-2": "url('/bg2.svg')",
       },
     },
   },
