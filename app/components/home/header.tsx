@@ -11,8 +11,8 @@ export function Header() {
     <Container
       className={`bg-header-1 bg-no-repeat bg-cover grid gap-6 place-items-center h-[25%] md:h-[789px]`}
     >
-      <div className="flex flex-col md:flex-row justify-between items-center">
-        <div className="self-start">
+      <div className="flex flex-col-reverse md:flex-row justify-between items-center">
+        <div className="md:self-start">
           <h1 className="text-2xl md:text-3xl font-black max-w-md text-center md:text-left mb-4">
             Unleash the Power of Success in
             <span className="text-blue-700"> Software Engineering</span> with
