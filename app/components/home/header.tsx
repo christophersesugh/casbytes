@@ -11,14 +11,14 @@ export function Header() {
     <Container
       className={`bg-header-1 bg-no-repeat bg-cover grid gap-6 place-items-center h-[25%] md:h-[789px]`}
     >
-      <div className="flex flex-col md:flex-row justify-between items-center ">
+      <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="self-start">
           <h1 className="text-2xl md:text-3xl font-black max-w-md text-center md:text-left mb-4">
             Unleash the Power of Success in
             <span className="text-blue-700"> Software Engineering</span> with
             <span className="text-purple-500"> CASBytes</span>.
           </h1>
-          <Zoom triggerOnce duration={300}>
+          <Zoom triggerOnce duration={300} className="hidden md:block">
             <h2 className="text-xl my-12 font-black max-w-md text-center md:text-left">
               Begin Your Transformational Odyssey: Explore CASBytes'
               <span className="text-pink-500"> Leading-Edge Curriculum.</span>

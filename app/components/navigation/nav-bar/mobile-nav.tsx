@@ -1,11 +1,13 @@
 import { Link } from "@remix-run/react";
 import { Button } from "~/components/custom-button";
+import { Separator } from "~/components/custom-separator";
 import { SignOutButton } from "~/components/sign-out-button";
 // import { SignOutButton } from "~/components/sign-out-button";
 import { cn } from "~/libs/shadcn";
 
 type MobileNavProps = {
   isOpen: boolean;
+  authApp: boolean;
   handleNavToggle: () => void;
   className?: string;
   menuItems: { label: string; href: string }[];
@@ -14,10 +16,12 @@ type MobileNavProps = {
 export function MobileNav({
   isOpen,
   menuItems,
+  authApp,
   className,
   handleNavToggle,
   ...props
 }: MobileNavProps) {
+  const user = true;
   return (
     <nav
       className={cn(
@@ -40,10 +44,23 @@ export function MobileNav({
             </Button>
           </li>
         ))}
-        <SignOutButton
-          isOpen={isOpen}
-          className="text-red-500 hover:opacity-70"
-        />
+        <Separator className="text-white" />
+        <li>
+          {authApp ? (
+            <SignOutButton
+              isOpen={isOpen}
+              className="text-red-500 hover:opacity-70"
+            />
+          ) : (
+            <Button
+              variant="ghost"
+              className="self-center text-lg text-blue-600"
+              asChild
+            >
+              <Link to="/sign-in">Sign In</Link>
+            </Button>
+          )}
+        </li>
       </ul>
     </nav>
   );

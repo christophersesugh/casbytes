@@ -5,9 +5,11 @@ import {
   Meta,
   Scripts,
   ScrollRestoration,
+  useRouteError,
 } from "@remix-run/react";
 import stylesheet from "~/tailwind.css";
 import { RootLayout } from "./components/layouts";
+import { RootErrorUI } from "./components/root-error-ui";
 
 export const links: LinksFunction = () => [
   {
@@ -28,21 +30,42 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
 ];
 
-export default function App() {
+type DocumentProps = {
+  children: React.ReactNode;
+};
+
+function Document({ children }: DocumentProps) {
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
       </head>
       <body className="bg-slate-100">
-        <RootLayout />
+        {children}
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
       </body>
     </html>
+  );
+}
+
+export default function App() {
+  return (
+    <Document>
+      <RootLayout />
+    </Document>
+  );
+}
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+  return (
+    <Document>
+      <RootErrorUI error={error} />
+    </Document>
   );
 }
