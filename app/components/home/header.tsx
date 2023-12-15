@@ -3,8 +3,8 @@ import { Link } from "@remix-run/react";
 import { Zoom, Slide, Fade } from "react-awesome-reveal";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import { Container } from "../container";
-import elearning from "~/assets/elearning.png";
 import { Button } from "../custom-button";
+import elearning from "~/assets/elearning.png";
 
 export function Header() {
   return (

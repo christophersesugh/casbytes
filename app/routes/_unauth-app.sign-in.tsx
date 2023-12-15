@@ -3,6 +3,7 @@ import { Container } from "~/components/container";
 import { Button } from "~/components/custom-button";
 import { Input } from "~/components/custom-input";
 import { Checkbox } from "~/components/custom-checkbox";
+import { FaGithub } from "react-icons/fa";
 
 export default function SignInRoute() {
   return (
@@ -45,7 +46,15 @@ export default function SignInRoute() {
         >
           sign in
         </Button>
+        <p className="mx-auto">OR</p>
 
+        <Button
+          type="submit"
+          className="uppercase bg-zinc-600 hover:bg-zinc-500"
+          aria-label="sign up"
+        >
+          <FaGithub className="mr-2 h-6 w-6" /> sign in with github
+        </Button>
         <div className="text-center">
           Don't have an account?{" "}
           <Link to="/sign-up">

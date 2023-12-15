@@ -1,5 +1,9 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkEmoji from "remark-emoji";
+// import remarkHeadingId from "remark-heading-id";
+import remarkMath from "remark-math";
+// import codeTitle from "remark-code-title";
 import rehypeRaw from "rehype-raw";
 import {
   B,
@@ -24,7 +28,7 @@ export function Markdown({ source }: { source: string }) {
     <div className="markdown">
       <ReactMarkdown
         children={source}
-        remarkPlugins={[remarkGfm]}
+        remarkPlugins={[remarkGfm, remarkEmoji, remarkMath]}
         rehypePlugins={[rehypeRaw]}
         components={{
           h1: H1,

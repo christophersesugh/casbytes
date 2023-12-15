@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  Int              @id @default(autoincrement())
+  email               String           @unique
+  firstName           String?
+  lastName            String?
+  password            String
+  createdAt           DateTime         @default(now())
+  updatedAt           DateTime         @updatedAt
+  token               String?
+  onboardingCompleted Boolean          @default(false)
+  paystackCustomerId  String?
+  progress            CourseProgress[]
+}
+
+model CourseProgress {
+  id               Int              @id @default(autoincrement())
+  userId           Int              @unique
+  courseId         Int
+  user             User             @relation(fields: [userId], references: [id])
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  moduleProgresses ModuleProgress[]
+}
+
+model ModuleProgress {
+  id               Int            @id @default(autoincrement())
+  courseProgress   CourseProgress @relation(fields: [courseProgressId], references: [id])
+  courseProgressId Int
+  moduleId         Int
+  courseId         Int
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  // lessonProgress   LessonProgress[]
+}
+
+// model LessonProgress {
+//   id               Int            @id @default(autoincrement())
+//   moduleProgress   ModuleProgress @relation(fields: [moduleProgressId], references: [id])
+//   courseProgressId Int
+//   moduleId         Int
+//   courseId         Int
+//   createdAt        DateTime       @default(now())
+//   updatedAt        DateTime       @updatedAt
+// }

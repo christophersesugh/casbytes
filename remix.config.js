@@ -6,6 +6,7 @@ export default {
   },
   serverDependenciesToBundle: [
     /^rehype.*/,
+    /^lodash.*/,
     /^remark.*/,
     /^unified.*/,
     /^unist.*/,

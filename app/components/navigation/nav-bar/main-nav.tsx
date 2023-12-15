@@ -81,7 +81,7 @@ export function MainNav({
           </Button>
 
           {authApp ? (
-            <Badge className="text-md py-1 bg-blue-500">
+            <Badge className="hidden md:flex text-md py-1 bg-blue-500">
               {" "}
               <UserCircle2 className="mr-2" />
               Christopher

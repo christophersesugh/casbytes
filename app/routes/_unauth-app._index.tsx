@@ -4,7 +4,7 @@ import { Home } from "~/components/home";
 export const meta: MetaFunction = () => {
   return [
     { title: "CASBytes" },
-    { name: "description", content: "Welcome to Remix!" },
+    { name: "description", content: "An onile school for software engineers." },
   ];
 };
 

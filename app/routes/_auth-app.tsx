@@ -46,6 +46,11 @@ const menuItems = [
     href: "course-catalog",
   },
   {
+    icon: <LibrarySquare size={30} />,
+    label: "onboarding",
+    href: "onboarding",
+  },
+  {
     icon: <CalendarDays size={30} />,
     label: "calendar",
     href: "calendar",
