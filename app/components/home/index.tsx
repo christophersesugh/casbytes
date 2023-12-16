@@ -3,7 +3,7 @@ import { CurriculumOverview } from "./curriculum-overview";
 import { Goals } from "./goals";
 import { Header } from "./header";
 import { Partnerships } from "./partnerships";
-import { Pricing } from "./pricing";
+import { Pricing } from "./subscription";
 import { Testimonials } from "./testimonials";
 
 export function Home() {

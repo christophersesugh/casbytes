@@ -27,30 +27,65 @@ model User {
 model CourseProgress {
   id               Int              @id @default(autoincrement())
   userId           Int              @unique
-  courseId         Int
+  courseId         Int              @unique
   user             User             @relation(fields: [userId], references: [id])
   createdAt        DateTime         @default(now())
   updatedAt        DateTime         @updatedAt
   moduleProgresses ModuleProgress[]
+
+  @@map("course_progress")
 }
 
 model ModuleProgress {
-  id               Int            @id @default(autoincrement())
-  courseProgress   CourseProgress @relation(fields: [courseProgressId], references: [id])
+  id               Int              @id @default(autoincrement())
+  courseProgress   CourseProgress   @relation(fields: [courseProgressId], references: [id])
   courseProgressId Int
-  moduleId         Int
-  courseId         Int
-  createdAt        DateTime       @default(now())
-  updatedAt        DateTime       @updatedAt
-  // lessonProgress   LessonProgress[]
+  moduleId         Int              @unique
+  courseId         Int              @unique
+  userId           Int
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  lessonProgress   LessonProgress[]
+
+  @@map("module_progress")
 }
 
-// model LessonProgress {
-//   id               Int            @id @default(autoincrement())
-//   moduleProgress   ModuleProgress @relation(fields: [moduleProgressId], references: [id])
-//   courseProgressId Int
-//   moduleId         Int
-//   courseId         Int
-//   createdAt        DateTime       @default(now())
-//   updatedAt        DateTime       @updatedAt
-// }
+model LessonProgress {
+  id               Int            @id @default(autoincrement())
+  moduleProgress   ModuleProgress @relation(fields: [moduleProgressId], references: [id])
+  moduleProgressId Int
+  lessonId         Int            @unique
+  moduleId         Int            @unique
+  courseId         Int            @unique
+  userId           Int
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+
+  @@map("lesson_progress")
+}
+
+model Quiz {
+  id        Int      @id @default(autoincrement())
+  title     String
+  courseId  Int
+  moduleId  Int
+  lessonId  Int
+  userId    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("quiz")
+}
+
+model Exercise {
+  id        Int      @id @default(autoincrement())
+  title     String
+  courseId  Int
+  moduleId  Int
+  lessonId  Int
+  userId    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("exercise")
+}

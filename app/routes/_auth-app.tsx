@@ -4,6 +4,7 @@ import {
   CalendarCheck,
   CalendarDays,
   Contact2,
+  Home,
   LayoutDashboard,
   LibrarySquare,
   UserCircle2,
@@ -41,9 +42,9 @@ export default function AuthApp() {
 
 const menuItems = [
   {
-    icon: <LibrarySquare size={30} />,
-    label: "courses",
-    href: "course-catalog",
+    icon: <Home size={30} />,
+    label: "dashboard",
+    href: "dashboard",
   },
   {
     icon: <LibrarySquare size={30} />,

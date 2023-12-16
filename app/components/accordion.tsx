@@ -37,10 +37,10 @@ export function Accordion({
         }
         aria-label={title}
         className={cn(
-          "-p-1 drop-shadow-sm duration-300 rounded-md bg-slate-200 w-full flex justify-between capitalize text-lg flex-wrap border-2",
-          accordionIndex === index
-            ? "text-stone-900"
-            : "text-blue-600 border-l border-slate-200",
+          "-p-1 drop-shadow-sm  rounded-md border-white text-slate-50 bg-blue-600 w-full flex justify-between capitalize text-lg flex-wrap border-2",
+          // accordionIndex === index
+          //   ? "text-stone-900"
+          //   : "border-l border-white",
         )}
         {...props}
       >

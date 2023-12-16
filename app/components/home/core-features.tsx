@@ -11,7 +11,7 @@ export function CoreFeatures() {
   return (
     <Container className="bg-white">
       <div className="flex flex-col items-center max-w-6xl mx-auto gap-8 px-4">
-        <h1 className="text-3xl text-blue-400 font-bold mb-8">Core features</h1>
+        <h1 className="text-3xl text-blue-600 font-bold mb-8">Courses</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <Fade cascade className="grid static">
             {items.map((item, index) => (
@@ -47,12 +47,27 @@ const items = [
   },
   {
     icon: <MdQuiz className="text-[3rem]" />,
-    title: "Interactive Quizzes",
+    title: "Low level programming",
     desc: "Elevate your comprehension of pivotal concepts through our engaging interactive quizzes. Within every submodule, you'll discover quizzes meticulously designed to challenge your understanding while offering instant feedback. Dive into self-assessment and chart your journey as you navigate through our curriculum.",
   },
   {
     icon: <FaThinkPeaks className="text-[3rem]" />,
     title: "Hands-On Coding Exercises",
+    desc: "Immerse yourself in the world of practicality through our hands-on coding exercises. Explore submodules meticulously crafted to both challenge and fortify your coding prowess. Hone your problem-solving abilities, enhance code efficiency, and gain invaluable hands-on experience that will arm you for the rigors of real-world software engineering challenges.",
+  },
+  {
+    icon: <FaThinkPeaks className="text-[3rem]" />,
+    title: "Hands-On Coding Exercises",
+    desc: "Immerse yourself in the world of practicality through our hands-on coding exercises. Explore submodules meticulously crafted to both challenge and fortify your coding prowess. Hone your problem-solving abilities, enhance code efficiency, and gain invaluable hands-on experience that will arm you for the rigors of real-world software engineering challenges.",
+  },
+  {
+    icon: <FaThinkPeaks className="text-[3rem]" />,
+    title: "Hands-On Coding Exercises",
+    desc: "Immerse yourself in the world of practicality through our hands-on coding exercises. Explore submodules meticulously crafted to both challenge and fortify your coding prowess. Hone your problem-solving abilities, enhance code efficiency, and gain invaluable hands-on experience that will arm you for the rigors of real-world software engineering challenges.",
+  },
+  {
+    icon: <FaThinkPeaks className="text-[3rem]" />,
+    title: "System design",
     desc: "Immerse yourself in the world of practicality through our hands-on coding exercises. Explore submodules meticulously crafted to both challenge and fortify your coding prowess. Hone your problem-solving abilities, enhance code efficiency, and gain invaluable hands-on experience that will arm you for the rigors of real-world software engineering challenges.",
   },
 ];

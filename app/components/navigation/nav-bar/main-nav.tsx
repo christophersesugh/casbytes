@@ -25,44 +25,38 @@ export function MainNav({
   handleNavToggle,
 }: MainNavProps) {
   return (
-    <nav className={cn("bg-[#E1F4FF]")}>
+    <nav className={cn("bg-[#E1F4FF]", authApp ? "hidden" : "block")}>
       <div className="flex items-center justify-between py-8 px-4 xl:px-0 max-w-6xl mx-auto">
-        {authApp ? null : (
-          <Button variant="ghost" asChild>
-            <Link to="/">
-              <img src={logo} alt="CASBytes" width={200} />
-            </Link>
-          </Button>
-        )}
+        <Button variant="ghost" asChild>
+          <Link to="/">
+            <img src={logo} alt="CASBytes" width={200} />
+          </Link>
+        </Button>
 
-        {authApp ? (
-          <div></div>
-        ) : (
-          <div className="hidden md:flex gap-4">
-            <div className="flex gap-4 items-center">
-              <ul className="flex gap-4">
-                {menuItems && menuItems?.length > 0
-                  ? menuItems?.map((item: ItemProps, index: number) => (
-                      <li>
-                        <NavLink
-                          key={`${item.href}-${index}`}
-                          to={item.href}
-                          aria-label={item.label}
-                          className={({ isActive }) =>
-                            isActive ? "text-blue-500 rounded-md" : ""
-                          }
-                        >
-                          <Button variant="link" className="text-lg capitalize">
-                            {item.label}
-                          </Button>
-                        </NavLink>
-                      </li>
-                    ))
-                  : null}
-              </ul>
-            </div>
+        <div className="hidden md:flex gap-4">
+          <div className="flex gap-4 items-center">
+            <ul className="flex gap-4">
+              {menuItems && menuItems?.length > 0
+                ? menuItems?.map((item: ItemProps, index: number) => (
+                    <li>
+                      <NavLink
+                        key={`${item.href}-${index}`}
+                        to={item.href}
+                        aria-label={item.label}
+                        className={({ isActive }) =>
+                          isActive ? "text-blue-500 rounded-md" : ""
+                        }
+                      >
+                        <Button variant="link" className="text-lg capitalize">
+                          {item.label}
+                        </Button>
+                      </NavLink>
+                    </li>
+                  ))
+                : null}
+            </ul>
           </div>
-        )}
+        </div>
         <div>
           <Button
             onClick={handleNavToggle}
@@ -80,30 +74,22 @@ export function MainNav({
             )}
           </Button>
 
-          {authApp ? (
-            <Badge className="hidden md:flex text-md py-1 bg-blue-500">
-              {" "}
-              <UserCircle2 className="mr-2" />
-              Christopher
-            </Badge>
-          ) : (
-            <div className="md:flex gap-4 hidden items-center">
-              <Link prefetch="intent" to="/sign-in">
-                <Button
-                  className="capitalize"
-                  variant="outline"
-                  aria-label="sign in"
-                >
-                  sign in
-                </Button>
-              </Link>
-              <Link prefetch="intent" to="/sign-up">
-                <Button aria-label="sign up" className="capitalize">
-                  sign up
-                </Button>
-              </Link>
-            </div>
-          )}
+          <div className="md:flex gap-4 hidden items-center">
+            <Link prefetch="intent" to="/sign-in">
+              <Button
+                className="capitalize"
+                variant="outline"
+                aria-label="sign in"
+              >
+                sign in
+              </Button>
+            </Link>
+            <Link prefetch="intent" to="/sign-up">
+              <Button aria-label="sign up" className="capitalize">
+                sign up
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

@@ -12,7 +12,7 @@ import { Container } from "../container";
 export function Partnerships() {
   return (
     <Container className="bg-white">
-      <div className="max-3xl mx-auto">
+      <div className="max-3xl mx-auto my-12">
         <h2 className="text-blue-400 mb-12 text-3xl text-center">
           <span className="text-black opacity-50">Pathway to Success:</span> Our
           Proud Partners And Employers
