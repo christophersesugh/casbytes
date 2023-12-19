@@ -4,7 +4,7 @@ import { PageTitle } from "~/components/page-title";
 import {
   Courses,
   ModuleCard,
-  TrackStatus,
+  Status,
   TrophyCarbinet,
 } from "~/components/track";
 
@@ -26,7 +26,7 @@ export default function CoursesRoute() {
           <h1 className="text-lg text-slate-100 bg-zinc-600 rounded-t-md mb-4 p-2">
             Courses
           </h1>
-          <TrackStatus />
+          <Status />
           <Courses />
         </div>
       </div>

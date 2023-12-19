@@ -1,4 +1,4 @@
 export { ModuleCard } from "./module-card";
-export { TrackStatus } from "./track-status";
+export { Status } from "./status";
 export { Courses } from "./courses";
 export { TrophyCarbinet } from "./trophy-cabinet";

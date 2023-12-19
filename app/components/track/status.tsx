@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { Badge } from "../custom-badge";
 
-export function TrackStatus() {
+export function Status() {
   return (
     <ul className="gap-4 grid grid-cols-2 border-l-4 border-blue-600 p-2 text-md my-4">
       <li className="flex">
@@ -27,7 +27,7 @@ export function TrackStatus() {
         <Badge className="rounded-full ml-2">0</Badge>
       </li>
       <li className="flex">
-        <SigmaSquare className="mr-2" /> Total Courses:{" "}
+        <SigmaSquare className="mr-2" /> Total:{" "}
         <Badge className="rounded-full ml-2">0</Badge>
       </li>
     </ul>

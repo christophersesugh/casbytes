@@ -1,5 +1,4 @@
 import React from "react";
-import { Badge } from "../custom-badge";
 import { Progress } from "../custom-progress";
 import { Button } from "../custom-button";
 import { Link } from "@remix-run/react";
@@ -18,11 +17,6 @@ export function ModuleCard() {
             <div className="flex flex-col justify-between">
               <p className="text-lg text-slate-600">Module {i + 1}</p>
               <h1 className="text-xl mb-2">Functions</h1>
-              {/* {i < 2 ? <Check /> : <Lock />} */}
-              {/* <Badge className="flex self-start items-center rounded-full">
-                <Star className="mr-2 h-3 w-3" />
-                4.9
-              </Badge> */}
             </div>
             <div className="flex flex-col justify-between items-center">
               {i < 2 ? <Progress value={34} /> : <Progress value={0} />}
