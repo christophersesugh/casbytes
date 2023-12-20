@@ -45,7 +45,7 @@ function Document({ children }: DocumentProps) {
         <Meta />
         <Links />
       </head>
-      <body className="bg-slate-100">
+      <body className="bg-slate-50">
         {children}
         <ScrollRestoration />
         <Scripts />

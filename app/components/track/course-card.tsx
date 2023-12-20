@@ -1,10 +1,10 @@
 import React from "react";
 import jsLogo from "~/assets/js-logo.png";
-import { Badge } from "../custom-badge";
 import { Button } from "../custom-button";
 import { Link } from "@remix-run/react";
 import { Progress } from "../custom-progress";
-import { CheckCheck, Plus } from "lucide-react";
+import { CheckCheck, Plus, Star } from "lucide-react";
+import { Badge } from "../custom-badge";
 
 export function CourseCard({ i, course }: { i: number; course: any }) {
   return (
@@ -19,7 +19,11 @@ export function CourseCard({ i, course }: { i: number; course: any }) {
           <p className="text-xs text-blue-700">2000 students.</p>
         </div>
       </div>
-
+      {course.rating ? (
+        <Badge className="rounded-full p-1 bg-zinc-600 hover:bg-zinc-500">
+          <Star className="mr-2 h-4 w-4" /> {course.rating}{" "}
+        </Badge>
+      ) : null}
       <div className="flex flex-col gap-4 items-center">
         {i < 2 ? <Progress value={34} /> : <Progress value={0} />}
         <Button asChild>

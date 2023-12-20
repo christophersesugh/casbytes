@@ -1,8 +1,3 @@
-import React from "react";
-import { Button } from "../custom-button";
-import { Link } from "@remix-run/react";
-import { CheckCircle, Lock } from "lucide-react";
-import jsLogo from "~/assets/js-logo.png";
 import { CourseCard } from "./course-card";
 
 export function Courses() {
@@ -19,17 +14,56 @@ const courses = [
   {
     id: "1",
     title: "HTML",
+    rating: 4.9,
   },
   {
     id: "1",
     title: "CSS",
+    rating: 5,
   },
   {
     id: "1",
     title: "JavaScript",
+    rating: 5,
   },
   {
     id: "1",
     title: "Python",
+    rating: 5,
+  },
+  {
+    id: "1",
+    title: "Python",
+    rating: 5,
+  },
+  {
+    id: "1",
+    title: "Python",
+    rating: 5,
+  },
+  {
+    id: "1",
+    title: "Python",
+    rating: 5,
+  },
+  {
+    id: "1",
+    title: "Python",
+    rating: 5,
+  },
+  {
+    id: "1",
+    title: "Python",
+    rating: 5,
+  },
+  {
+    id: "1",
+    title: "Python",
+    rating: 5,
+  },
+  {
+    id: "1",
+    title: "Python",
+    rating: 5,
   },
 ];

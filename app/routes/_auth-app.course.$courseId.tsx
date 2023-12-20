@@ -4,13 +4,17 @@ import { Container } from "~/components/container";
 import { PageTitle } from "~/components/page-title";
 import { Button } from "~/components/custom-button";
 import { Link, useLoaderData } from "@remix-run/react";
-import { CheckCircle, Lock } from "lucide-react";
+import { CheckCircle, CircleDashed, Lock } from "lucide-react";
 import { Markdown } from "~/components/markdown";
 import { json } from "@remix-run/node";
-import { Quiz } from "~/components/quiz";
-import { Exercises } from "~/components/exercises";
+import { Quiz } from "~/components/course/quiz";
+import { Exercises } from "~/components/course/exercises";
 import { Pagination } from "~/components/pagination";
 import { Status } from "~/components/track";
+import { CourseTitle } from "~/components/course-title";
+import { Description } from "~/components/description";
+import { SideContent } from "~/components/course";
+import { Sheet } from "~/components/custom-sheet";
 
 export const loader = async () => {
   const content = `
@@ -161,13 +165,19 @@ export default function ModulesRoute() {
   const { content } = useLoaderData<typeof loader>();
 
   return (
-    <Container className="max-w-7xl">
+    <Container className="max-w-3xl lg:max-w-7xl">
       <BackButton to="/track/1" buttonText="Introduction to SE" />
       <PageTitle title="Javascript" className="mb-12" />
-      <div className="md:grid md:grid-cols md:grid-cols-6 gap-6">
+      <div className="lg:grid lg:grid-cols md:grid-cols-6 gap-6">
         <div className="col-span-4 flex flex-col gap-6 overflow-y-auto h-screen">
           <div className="col-span-3">
-            <div>learning objectives</div>
+            <Description
+              content=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+            nulla ipsum earum asperiores similique provident, rem cumque modi
+            eum ipsam, esse dignissimos rerum, deserunt nesciunt molestias. Ut
+            perspiciatis amet quibusdam!"
+            />
+
             <Markdown source={content} />
           </div>
           <hr />
@@ -185,40 +195,10 @@ export default function ModulesRoute() {
             nextItemDisabled
           />
         </div>
-        <div className="hidden md:block col-span-2 border bg-slate-200/70 h-screen overflow-y-auto">
-          <h1 className="text-lg text-slate-100 bg-stone-600 rounded-t-md mb-4 p-2">
-            Functions
-          </h1>
-          <Status />
-          <ul className="grid grid-cols-2 gap-4 p-2">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Button
-                variant="secondary"
-                className="flex justify-between bg-slate-300 hover:bg-slate-300/50 text-black"
-                asChild
-              >
-                <Link to={`/course/1`}>
-                  <li key={i} className="flex items-center text-lg">
-                    {i < 2 ? (
-                      <CheckCircle className="mr-4 text-blue-600" />
-                    ) : (
-                      <Lock className="mr-4" />
-                    )}{" "}
-                    Javascript
-                  </li>
-                </Link>
-              </Button>
-            ))}
-          </ul>
-          <h1 className="text-lg text-slate-100 bg-stone-600 rounded-t-md my-4 p-2">
-            Quizzes
-          </h1>
-          <Status />
-          <h1 className="text-lg text-slate-100 bg-stone-600 rounded-t-md my-4 p-2">
-            Exercises
-          </h1>
-          <Status />
-        </div>
+
+        <aside className="hidden lg:block col-span-2 border bg-slate-200/70 h-screen overflow-y-auto">
+          <SideContent />
+        </aside>
       </div>
     </Container>
   );

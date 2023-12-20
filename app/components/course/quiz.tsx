@@ -8,8 +8,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "./custom-table";
-import { Button } from "./custom-button";
+} from "../custom-table";
+import { Button } from "../custom-button";
 import { CircleOff } from "lucide-react";
 
 export function Quiz({ quiz }: { quiz: any }) {
@@ -30,7 +30,7 @@ export function Quiz({ quiz }: { quiz: any }) {
               asChild
             >
               <Link to="/lesson/1/quiz" className="cursor-pointer">
-                elements elements elements elements elements
+                forEach HOF quiz
               </Link>
             </Button>
           </TableCell>

@@ -32,7 +32,7 @@ export function Pagination({
   nextItemDisabled,
 }: PaginationProps) {
   return (
-    <Form className="flex flex-wrap justify-between mt-20">
+    <Form className="flex flex-wrap justify-between">
       <Button
         variant="outline"
         onClick={previousItemOnClick}

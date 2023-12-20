@@ -7,9 +7,9 @@ import {
   TableHeader,
   TableRow,
 } from "~/components/custom-table";
-import { Button } from "./custom-button";
+import { Button } from "../custom-button";
 import { Link } from "@remix-run/react";
-import { Badge } from "./custom-badge";
+import { Badge } from "../custom-badge";
 import { CheckCircle, CircleDashed, CircleOff } from "lucide-react";
 
 export function Exercises() {
@@ -30,7 +30,7 @@ export function Exercises() {
                   variant="link"
                   className="text-blue-600 text-md capitalize p-0"
                 >
-                  <Link to={`/course/${course.id}`}>{course.title}</Link>
+                  <Link to={`/lesson/${course.id}/1`}>{course.title}</Link>
                 </Button>
               </TableCell>
 

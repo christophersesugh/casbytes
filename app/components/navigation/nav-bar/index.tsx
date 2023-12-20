@@ -2,6 +2,7 @@ import React from "react";
 import { MainNav } from "./main-nav";
 import { MobileNav } from "./mobile-nav";
 import { useMatches } from "@remix-run/react";
+import { Sheet } from "~/components/custom-sheet";
 
 type NavBarProps = {
   menuItems: { label: string; href: string }[];

@@ -6,7 +6,7 @@ export function SideBarContainer({ ...props }) {
   return (
     <aside
       className={cn(
-        "fixed top-0 left-0 hidden md:block z-50  h-screen bg-slate-800 text-slate-100  duration-300 ease-in-out",
+        "fixed top-0 left-0 hidden lg:block z-50  h-screen bg-slate-800 text-slate-100  duration-300 ease-in-out",
         isOpen ? "w-52" : "w-16",
       )}
     >

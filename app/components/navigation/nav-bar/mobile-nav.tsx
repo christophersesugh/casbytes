@@ -21,12 +21,11 @@ export function MobileNav({
   handleNavToggle,
   ...props
 }: MobileNavProps) {
-  const user = true;
   return (
     <nav
       className={cn(
-        isOpen ? "flex md:hidden" : "hidden",
-        "flex-col md:hidden duration-300 ease-in-out absolute  divide-y-2 bg-slate-200 z-10 w-full border-b-2 drop-shadow-lg",
+        isOpen ? "flex lg:hidden" : "hidden",
+        "flex-col lg:hidden duration-300 ease-in-out absolute  divide-y-2 bg-slate-200 z-10 w-full border-b-2 drop-shadow-lg",
       )}
       id="nav"
       {...props}

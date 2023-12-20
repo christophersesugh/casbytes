@@ -1,5 +1,7 @@
 import { BackButton } from "~/components/back-button";
 import { Container } from "~/components/container";
+import { CourseTitle } from "~/components/course-title";
+import { Description } from "~/components/description";
 import { PageTitle } from "~/components/page-title";
 import {
   Courses,
@@ -7,28 +9,22 @@ import {
   Status,
   TrophyCarbinet,
 } from "~/components/track";
+import { Modules } from "~/components/track/modules";
+import { SideContent } from "~/components/track/side-content";
 
 export default function CoursesRoute() {
   return (
-    <Container className="max-w-6xl mt-6">
+    <Container className="max-w-3xl lg:max-w-6xl mt-6">
       <BackButton to="/dashboard" buttonText="dashboard" />
       <PageTitle
         title="introduction to software engineering"
         className="mb-12"
       />
-      <div className="md:grid md:grid-cols md:grid-cols-5 gap-6">
-        <ModuleCard />
-        <div className="hidden md:block col-span-2 border bg-slate-200/70 overflow-y-auto h-screen">
-          <h1 className="text-lg text-slate-100 bg-zinc-700 rounded-t-md mb-4 p-2">
-            Javascript trophy cabinet
-          </h1>
-          <TrophyCarbinet />
-          <h1 className="text-lg text-slate-100 bg-zinc-600 rounded-t-md mb-4 p-2">
-            Courses
-          </h1>
-          <Status />
-          <Courses />
-        </div>
+      <div className="lg:grid lg:grid-cols lg:grid-cols-5 gap-6">
+        <Modules />
+        <aside className="hidden lg:block col-span-2 border bg-slate-200/70 overflow-y-auto h-screen">
+          <SideContent />
+        </aside>
       </div>
     </Container>
   );
