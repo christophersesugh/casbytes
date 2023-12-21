@@ -161,7 +161,7 @@ export function Courses() {
   return json({ content });
 };
 
-export default function ModulesRoute() {
+export default function CourseIndexRoute() {
   const { content } = useLoaderData<typeof loader>();
 
   return (

@@ -18,7 +18,7 @@ export function TrackCard({ i, course }: { i: number; course: any }) {
         </div>
       </div>
 
-      <div className="flex gap-2 items-center justify-self-end">
+      <div className="flex justify-between gap-2 items-center ">
         <Badge className="bg-stone-600 hover:bg-stone-500 p-1 rounded-full">
           6 courses
         </Badge>
