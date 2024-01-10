@@ -7,7 +7,7 @@ export function ContentOverview() {
     <Container id="overview">
       <div className="flex flex-col md:flex-row justify-evenly max-w-6xl mx-auto">
         <Fade cascade>
-          <div className="max-w-md">
+          <div className="max-w-md mx-auto">
             <h1 className="text-3xl font-bold text-center my-12 md:text-left">
               Transform Your Dreams into Reality:{" "}
               <span className="text-blue-700">
@@ -43,7 +43,7 @@ export function ContentOverview() {
             width={500}
             height={500}
             alt="elearning"
-            className="mt-8 md:mt-32"
+            className="mt-8 md:mt-32 mx-auto"
           />
         </Fade>
       </div>

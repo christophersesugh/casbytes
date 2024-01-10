@@ -28,7 +28,7 @@ export function Testimonial() {
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem
               key={index}
-              className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3"
+              className="pl-2 md:pl-4 sm:basis-1/2 lg:basis-1/3"
             >
               <div className="p-2">
                 <Card className="border-blue-500 drop-shadow-md bg-slate-100">

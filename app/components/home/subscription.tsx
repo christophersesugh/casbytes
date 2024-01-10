@@ -14,9 +14,10 @@ export function Subscription() {
             ready to move forward, it's just a step away.
             <p className="text-zinc-500 text-sm">Cancel anytime</p>
           </h1>
-          <div className="flex w-full gap-6 items-center justify-center rounded-md">
+          <div className="flex flex-col md:flex-row w-full gap-6 items-center justify-center rounded-md">
             {paymentOptions.map((option, index) => (
               <Card
+                key={`item-${index}`}
                 className={cn(
                   "drop-shadow-md",
                   index < 1

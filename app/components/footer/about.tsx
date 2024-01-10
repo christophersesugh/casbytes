@@ -5,7 +5,7 @@ import { Title } from "./title";
 export function About() {
   return (
     <div>
-      <Title title="About" />
+      <Title title="About" className="mt-0" />
       <ul>
         {items.map((item) => (
           <li key={item.title}>

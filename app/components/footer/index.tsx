@@ -9,8 +9,8 @@ import { Button } from "../ui/button";
 export function Footer() {
   return (
     <Container className="bg-slate-200/80 border-t-2">
-      <div className="max-w-5xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto py-20 text-zinc-500">
-        <div className="flex flex-col gap-10">
+      <div className="max-w-5xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto py-8 md:py-20 text-zinc-500">
+        <div className="flex flex-col gap-6">
           <img src={logo} alt="CASBytes" width={160} height={150} />
           <div className="text-sm">
             <p>&copy;2024 CASBytes.</p>
