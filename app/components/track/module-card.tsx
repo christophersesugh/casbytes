@@ -1,8 +1,8 @@
 import React from "react";
-import { Progress } from "../custom-progress";
-import { Button } from "../custom-button";
 import { Link } from "@remix-run/react";
 import { CheckCheck, Lock } from "lucide-react";
+import { Progress } from "../ui/progress";
+import { Button } from "../ui/button";
 
 export function ModuleCard({ i }: any) {
   return (
@@ -17,7 +17,7 @@ export function ModuleCard({ i }: any) {
           <h1 className="text-xl mb-2">Functions</h1>
         </div>
         <div className="flex flex-col justify-between items-center">
-          {i < 2 ? <Progress value={34} /> : <Progress value={0} />}
+          <Progress value={i < 2 ? 34 : 0} />
           <Button asChild>
             <Link to={`/course/1`}>
               {i < 2 ? (

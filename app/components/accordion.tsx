@@ -1,6 +1,6 @@
 import { BiSolidDownArrow, BiSolidUpArrow } from "react-icons/bi";
 import { cn } from "~/libs/shadcn";
-import { Button } from "./custom-button";
+import { Button } from "./ui/button";
 
 type AccordionProps = {
   index: number;

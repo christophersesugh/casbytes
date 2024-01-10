@@ -1,13 +1,15 @@
-import React from "react";
 import { cn } from "~/libs/shadcn";
-import { Badge } from "./custom-badge";
+import { Badge } from "./ui/badge";
 
 type DescriptionProps = {
-  content: string;
+  children: string;
   className?: string;
 };
 
-export function Description({ content, className }: DescriptionProps) {
+export function ContentIntroductionBadge({
+  children,
+  className,
+}: DescriptionProps) {
   return (
     <h2
       className={cn(
@@ -18,7 +20,7 @@ export function Description({ content, className }: DescriptionProps) {
       <Badge className="top-0 right-0 absolute bg-zinc-600">
         What you will learn...
       </Badge>
-      {content}
+      {children}
     </h2>
   );
 }

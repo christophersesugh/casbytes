@@ -9,14 +9,13 @@ import {
   UserCircle2,
 } from "lucide-react";
 import { cn } from "~/libs/shadcn";
-import { TooltipProvider } from "../custom-tooltip";
 import { NavBar, SideBar } from "../navigation";
 
 export function AuthAppLayout() {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
 
   return (
-    <TooltipProvider>
+    <>
       <NavBar
         menuItems={menuItems}
         isNavOpen={isNavOpen}
@@ -35,7 +34,7 @@ export function AuthAppLayout() {
       >
         <Outlet />
       </div>
-    </TooltipProvider>
+    </>
   );
 }
 

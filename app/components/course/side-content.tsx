@@ -1,8 +1,8 @@
 import React from "react";
 import { CourseTitle } from "../course-title";
 import { Status } from "../track";
-import { Button } from "../custom-button";
 import { CheckCircle, CircleDashed, Lock } from "lucide-react";
+import { Button } from "../ui/button";
 
 export function SideContent() {
   return (

@@ -5,7 +5,7 @@ import {
   LockKeyhole,
   SigmaSquare,
 } from "lucide-react";
-import { Badge } from "../custom-badge";
+import { Badge } from "../ui/badge";
 
 export function Status() {
   return (

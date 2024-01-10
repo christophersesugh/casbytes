@@ -4,7 +4,7 @@ import { Link } from "@remix-run/react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import clsx from "clsx";
-import { AspectRatio } from "../custom-aspect-ratio";
+import { AspectRatio } from "../ui/aspect-ratio";
 
 type ElemProps = {
   children?: React.ReactNode;

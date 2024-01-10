@@ -1,10 +1,9 @@
 import { Form, Link } from "@remix-run/react";
 import { Container } from "~/components/container";
-import { Button } from "~/components/custom-button";
-import { Input } from "~/components/custom-input";
-import { Checkbox } from "~/components/custom-checkbox";
-import { Separator } from "~/components/custom-separator";
 import { FaGithub } from "react-icons/fa";
+import { Input } from "~/components/ui/input";
+import { Checkbox } from "~/components/ui/checkbox";
+import { Button } from "~/components/ui/button";
 
 export default function SignUpRoute() {
   return (
@@ -19,7 +18,7 @@ export default function SignUpRoute() {
           <Input
             id="first-name"
             name="first-name"
-            label="First name"
+            // label="First name"
             placeholder="First name"
             className="bg-slate-100"
             required
@@ -27,7 +26,7 @@ export default function SignUpRoute() {
           <Input
             id="last-name"
             name="last-name"
-            label="Last name"
+            // label="Last name"
             placeholder="Last name"
             className="bg-slate-100"
             required
@@ -38,7 +37,7 @@ export default function SignUpRoute() {
           type="email"
           id="email"
           name="email"
-          label="Email"
+          // label="Email"
           placeholder="Email address"
           className="bg-slate-100"
           required
@@ -48,7 +47,7 @@ export default function SignUpRoute() {
             type="password"
             id="password"
             name="password"
-            label="Password"
+            // label="Password"
             placeholder="Password"
             className="bg-slate-100"
             required
@@ -57,7 +56,7 @@ export default function SignUpRoute() {
             type="password"
             id="confirm-password"
             name="confirm-password"
-            label="Confirm password"
+            // label="Confirm password"
             placeholder="Confirm password"
             className="bg-slate-100"
             required
@@ -69,18 +68,18 @@ export default function SignUpRoute() {
           //   message={
           //     actionData?.fieldErrors?.agreement ? "Agree to terms." : undefined
           //   }
-          label={
-            <>
-              I agree to the {""}
-              <Link to="privacy-policy" className="text-blue-600">
-                Privacy policy
-              </Link>{" "}
-              and {""}
-              <Link to="terms-of-use" className="text-blue-600">
-                Terms of use
-              </Link>
-            </>
-          }
+          // label={
+          //   <>
+          //     I agree to the {""}
+          //     <Link to="privacy-policy" className="text-blue-600">
+          //       Privacy policy
+          //     </Link>{" "}
+          //     and {""}
+          //     <Link to="terms-of-use" className="text-blue-600">
+          //       Terms of use
+          //     </Link>
+          //   </>
+          // }
         />
         <Button
           type="submit"

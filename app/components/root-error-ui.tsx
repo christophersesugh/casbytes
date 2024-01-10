@@ -1,7 +1,7 @@
 import { useNavigation, useNavigate } from "@remix-run/react";
 import { Container } from "./container";
 import { XCircle } from "lucide-react";
-import { Button } from "./custom-button";
+import { Button } from "./ui/button";
 
 type ErrorUIProps = {
   error: Error | null | undefined | unknown;

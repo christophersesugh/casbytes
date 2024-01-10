@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "../custom-button";
 import lightbulb from "~/assets/light-bulb.webp";
+import { Button } from "../ui/button";
 
 export function SubscriptionCard() {
   const [isSubscribed, setIsSubscribed] = React.useState(true);

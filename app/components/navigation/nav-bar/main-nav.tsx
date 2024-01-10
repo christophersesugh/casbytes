@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, NavLink, useMatches } from "@remix-run/react";
 import { Menu, UserCircle2, X } from "lucide-react";
-import { Button } from "~/components/custom-button";
 import logo from "~/assets/logo.png";
 import { cn } from "~/libs/shadcn";
 import { RiMenuFoldLine } from "react-icons/ri";
 import { ImMenu3, ImMenu4 } from "react-icons/im";
+import { Button } from "~/components/ui/button";
 
 type MainNavProps = {
   menuItems?: { label: string; href: string }[];

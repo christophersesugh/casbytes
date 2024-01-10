@@ -1,6 +1,6 @@
 import { Form } from "@remix-run/react";
 import { cn } from "~/libs/shadcn";
-import { Button } from "./custom-button";
+import { Button } from "./ui/button";
 
 export function SignOutButton({
   className,

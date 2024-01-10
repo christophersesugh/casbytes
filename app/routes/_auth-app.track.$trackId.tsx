@@ -1,7 +1,7 @@
 import { BackButton } from "~/components/back-button";
 import { Container } from "~/components/container";
 import { CourseTitle } from "~/components/course-title";
-import { Description } from "~/components/description";
+import { Description } from "~/components/content-intro-badge";
 import { PageTitle } from "~/components/page-title";
 import {
   Courses,

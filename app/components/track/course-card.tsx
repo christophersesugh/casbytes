@@ -1,10 +1,10 @@
 import React from "react";
 import jsLogo from "~/assets/js-logo.png";
-import { Button } from "../custom-button";
 import { Link } from "@remix-run/react";
-import { Progress } from "../custom-progress";
 import { CheckCheck, Plus, Star } from "lucide-react";
-import { Badge } from "../custom-badge";
+import { Progress } from "../ui/progress";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
 
 export function CourseCard({ i, course }: { i: number; course: any }) {
   return (
@@ -25,7 +25,7 @@ export function CourseCard({ i, course }: { i: number; course: any }) {
         </Badge>
       ) : null}
       <div className="flex flex-col gap-4 items-center">
-        {i < 2 ? <Progress value={34} /> : <Progress value={0} />}
+        <Progress value={i < 2 ? 34 : 0} />
         <Button asChild>
           <Link to={`/course/1`}>
             {i < 2 ? (

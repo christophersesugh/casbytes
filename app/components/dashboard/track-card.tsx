@@ -1,8 +1,8 @@
 import React from "react";
 import jsLogo from "~/assets/js-logo.png";
-import { Badge } from "../custom-badge";
-import { Button } from "../custom-button";
 import { Link } from "@remix-run/react";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
 
 export function TrackCard({ i, course }: { i: number; course: any }) {
   return (

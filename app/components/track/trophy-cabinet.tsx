@@ -1,7 +1,7 @@
 import React from "react";
-import { Button } from "../custom-button";
 import { Link } from "@remix-run/react";
 import { CheckCircle, Lock } from "lucide-react";
+import { Button } from "../ui/button";
 
 export function TrophyCarbinet() {
   return (

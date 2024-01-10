@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "@remix-run/react";
 import { TbProgressX } from "react-icons/tb";
+
+import { CircleOff } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -8,9 +10,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../custom-table";
-import { Button } from "../custom-button";
-import { CircleOff } from "lucide-react";
+} from "../ui/table";
+import { Button } from "../ui/button";
 
 export function Quiz({ quiz }: { quiz: any }) {
   return (

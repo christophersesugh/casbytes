@@ -3,8 +3,7 @@ import { SideBarProvider, type SideBarProps } from "./side-bar-context";
 import { SideBarContent } from "./side-bar-content";
 import { Link } from "@remix-run/react";
 import { Tooltip } from "@radix-ui/react-tooltip";
-import { Button } from "~/components/custom-button";
-import { CustomTooltip } from "~/components/custom-tooltip";
+import { Button } from "~/components/ui/button";
 
 export function SideBar({
   menuItems,
@@ -32,10 +31,7 @@ export function SideBar({
                   to={item.label}
                   className="flex gap-4 capitalize text-xl items-center"
                 >
-                  <CustomTooltip
-                    tooltipTrigger={item.icon}
-                    tooltipContent={item.label}
-                  />
+                  {item.icon}
                   {isOpen && item.label}
                 </Link>
               </Button>

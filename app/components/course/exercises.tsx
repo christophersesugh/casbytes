@@ -1,4 +1,5 @@
-import React from "react";
+import { Link } from "@remix-run/react";
+import { CheckCircle, CircleDashed, CircleOff } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -6,11 +7,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "~/components/custom-table";
-import { Button } from "../custom-button";
-import { Link } from "@remix-run/react";
-import { Badge } from "../custom-badge";
-import { CheckCircle, CircleDashed, CircleOff } from "lucide-react";
+} from "../ui/table";
+import { Button } from "../ui/button";
 
 export function Exercises() {
   return (

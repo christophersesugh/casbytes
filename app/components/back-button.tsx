@@ -1,7 +1,7 @@
 import { Link } from "@remix-run/react";
 import { ArrowLeft } from "lucide-react";
 import { cn } from "~/libs/shadcn";
-import { Button } from "./custom-button";
+import { Button } from "./ui/button";
 
 type BackButtonProps = {
   className?: string;

@@ -1,7 +1,7 @@
 import { Link } from "@remix-run/react";
-import { Button } from "~/components/custom-button";
-import { Separator } from "~/components/custom-separator";
 import { SignOutButton } from "~/components/sign-out-button";
+import { Button } from "~/components/ui/button";
+import { Separator } from "~/components/ui/separator";
 // import { SignOutButton } from "~/components/sign-out-button";
 import { cn } from "~/libs/shadcn";
 

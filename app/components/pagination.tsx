@@ -1,8 +1,7 @@
-import React from "react";
-import { Link, Form } from "@remix-run/react";
+import { Link, Form, useFetcher } from "@remix-run/react";
 import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
 import { MarkAsCompletedButton } from "./mark-as-completed-button";
-import { Button } from "./custom-button";
+import { Button } from "./ui/button";
 
 type PaginationProps = {
   nextTo: string;
@@ -31,8 +30,9 @@ export function Pagination({
   previousItemDisabled,
   nextItemDisabled,
 }: PaginationProps) {
+  const pagination = useFetcher();
   return (
-    <Form className="flex flex-wrap justify-between">
+    <pagination.Form className="flex flex-wrap justify-between">
       <Button
         variant="outline"
         onClick={previousItemOnClick}
@@ -41,12 +41,12 @@ export function Pagination({
         asChild
         className="flex items-center"
       >
-        <Link prefetch="intent" to={previousTo}>
-          <RiArrowLeftSLine className="inline h-6 w-6" /> {previousItem}
-        </Link>
+        {/* <Link prefetch="intent" to={previousTo}> */}
+        <RiArrowLeftSLine className="inline h-6 w-6" /> {previousItem}
+        {/* </Link> */}
       </Button>
       <MarkAsCompletedButton
-        to={markAsCompletedTo}
+        // to={markAsCompletedTo}
         onClick={markAsCompletedOnClick}
         disabled={markAsCompletedDisabled}
       />
@@ -58,10 +58,10 @@ export function Pagination({
         asChild
         className="flex items-center"
       >
-        <Link prefetch="intent" to={nextTo}>
-          {nextItem} <RiArrowRightSLine className="inline h-6 w-6" />
-        </Link>
+        {/* <Link prefetch="intent" to={nextTo}> */}
+        {nextItem} <RiArrowRightSLine className="inline h-6 w-6" />
+        {/* </Link> */}
       </Button>
-    </Form>
+    </pagination.Form>
   );
 }

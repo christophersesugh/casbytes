@@ -2,7 +2,6 @@ import React from "react";
 import { BackButton } from "~/components/back-button";
 import { Container } from "~/components/container";
 import { PageTitle } from "~/components/page-title";
-import { Button } from "~/components/custom-button";
 import { Link, useLoaderData } from "@remix-run/react";
 import { CheckCircle, CircleDashed, Lock } from "lucide-react";
 import { Markdown } from "~/components/markdown";
@@ -12,9 +11,8 @@ import { Exercises } from "~/components/course/exercises";
 import { Pagination } from "~/components/pagination";
 import { Status } from "~/components/track";
 import { CourseTitle } from "~/components/course-title";
-import { Description } from "~/components/description";
+import { ContentIntroductionBadge } from "~/components/content-intro-badge";
 import { SideContent } from "~/components/course";
-import { Sheet } from "~/components/custom-sheet";
 
 export const loader = async () => {
   const content = `
@@ -171,12 +169,12 @@ export default function CourseIndexRoute() {
       <div className="lg:grid lg:grid-cols md:grid-cols-6 gap-6">
         <div className="col-span-4 flex flex-col gap-6 overflow-y-auto h-screen">
           <div className="col-span-3">
-            <Description
-              content=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-            nulla ipsum earum asperiores similique provident, rem cumque modi
-            eum ipsam, esse dignissimos rerum, deserunt nesciunt molestias. Ut
-            perspiciatis amet quibusdam!"
-            />
+            <ContentIntroductionBadge>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+              nulla ipsum earum asperiores similique provident, rem cumque modi
+              eum ipsam, esse dignissimos rerum, deserunt nesciunt molestias. Ut
+              perspiciatis amet quibusdam!
+            </ContentIntroductionBadge>
 
             <Markdown source={content} />
           </div>

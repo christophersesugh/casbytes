@@ -1,21 +1,21 @@
-import { CoreFeatures } from "./core-features";
-import { CurriculumOverview } from "./curriculum-overview";
-import { Goals } from "./goals";
 import { Header } from "./header";
+import { CoursesOverview } from "./courses-overview";
+import { ContentOverview } from "./content-overview";
+import { CurriculumOverview } from "./curriculum-overview";
+import { Testimonial } from "./testimonial";
 import { Partnerships } from "./partnerships";
-import { Pricing } from "./subscription";
-import { Testimonials } from "./testimonials";
+import { Subscription } from "./subscription";
 
 export function Home() {
   return (
     <div className="bg-white">
       <Header />
-      <CoreFeatures />
-      <Goals />
+      <CoursesOverview />
+      <ContentOverview />
       <CurriculumOverview />
-      <Testimonials />
+      <Testimonial />
       <Partnerships />
-      <Pricing />
+      <Subscription />
     </div>
   );
 }
