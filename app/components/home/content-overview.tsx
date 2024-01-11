@@ -4,7 +4,7 @@ import elearning2 from "~/assets/elearning2.png";
 
 export function ContentOverview() {
   return (
-    <Container id="overview">
+    <Container id="overview" className="mb-8">
       <div className="flex flex-col md:flex-row justify-evenly max-w-6xl mx-auto">
         <Fade cascade>
           <div className="max-w-md mx-auto">

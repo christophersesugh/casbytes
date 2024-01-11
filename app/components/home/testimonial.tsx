@@ -12,14 +12,17 @@ import { Container } from "../container";
 
 export function Testimonial() {
   return (
-    <Container className="max-w-6xl overflo-x-auto py-20" id="testimonials">
+    <Container
+      className="max-w-6xl overflo-x-auto py-20 relative"
+      id="testimonials"
+    >
       <h2 className="mb-12 text-3xl text-center">
         Voices of Success:{" "}
         <span className="text-blue-600">Hear What Our Students Say</span>
       </h2>
       <Carousel
         opts={{
-          align: "start",
+          // align: "s",
           loop: true,
         }}
         className="w-full"
@@ -67,8 +70,8 @@ export function Testimonial() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="font-black border-2" />
-        <CarouselNext className="font-black border-2" />
+        <CarouselPrevious className="font-black bg-blue-600 text-white border-2 border-blue-400 absolute -left-2.5" />
+        <CarouselNext className="font-black bg-blue-600 text-white border-2 border-blue-400 absolute -right-2.5" />
       </Carousel>
     </Container>
   );

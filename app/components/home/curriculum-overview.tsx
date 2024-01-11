@@ -23,14 +23,16 @@ export function CurriculumOverview() {
               <Card
                 key={`item-${index}`}
                 aria-label={item.title}
-                className="drop-shadow-xl rounded-md bg-white px-4 py-6 text-center mx-auto"
+                className="drop-shadow-xl rounded-md bg-white px-4 py-6 mx-auto"
               >
                 <CardContent>
                   <div>
                     <div className="text-blue-500 flex justify-center">
                       {item.icon}
                     </div>
-                    <h2 className="text-xl font-black my-4">{item.title}</h2>
+                    <h2 className="text-xl text-center font-black my-4">
+                      {item.title}
+                    </h2>
                   </div>
                   <div>{item.desc}</div>
                 </CardContent>

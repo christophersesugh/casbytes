@@ -21,21 +21,21 @@ export function SideBar({
       <SideBarContainer>
         <SideBarContent>
           {menuItems.map((item) => (
-            <Tooltip key={item.label}>
-              <Button
-                variant="link"
-                className="text-slate-200 hover:text-white"
-                asChild
+            // <Tooltip key={item.label}>
+            <Button
+              variant="link"
+              className="text-slate-200 hover:text-white"
+              asChild
+            >
+              <Link
+                to={item.label}
+                className="flex gap-4 capitalize text-xl items-center"
               >
-                <Link
-                  to={item.label}
-                  className="flex gap-4 capitalize text-xl items-center"
-                >
-                  {item.icon}
-                  {isOpen && item.label}
-                </Link>
-              </Button>
-            </Tooltip>
+                {item.icon}
+                {isOpen && item.label}
+              </Link>
+            </Button>
+            // </Tooltip>
           ))}
         </SideBarContent>
       </SideBarContainer>

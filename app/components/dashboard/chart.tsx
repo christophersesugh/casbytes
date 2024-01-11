@@ -23,15 +23,20 @@ const data = [
 export function Chart() {
   return (
     // <div style={{ width: "100%" }}>
-    <ResponsiveContainer width="100%" height={250}>
+    <ResponsiveContainer
+      width="100%"
+      height={250}
+      className="w-full flex justify-start"
+    >
       <LineChart
-        width={400}
+        // width={400}
+        className="w-full"
         height={200}
         data={data}
         margin={{
           top: 10,
-          right: 30,
-          left: 0,
+          right: 0,
+          left: -40,
           bottom: 0,
         }}
       >

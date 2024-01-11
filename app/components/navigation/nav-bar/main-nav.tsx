@@ -28,6 +28,7 @@ export function MainNav({
   return (
     <nav className={cn("bg-[#E1F4FF]", authApp ? "lg:hidden block" : "")}>
       <div className="flex items-center justify-between py-8 px-4 xl:px-0 max-w-6xl mx-auto">
+        {/* if a user is authenticated, show the drowpdown menu for mobile nav before the logo */}
         <div className={cn("flex", authApp ? "gap-4" : "")}>
           {authApp ? (
             <Button
@@ -39,11 +40,7 @@ export function MainNav({
               id="navbar"
               asChild
             >
-              {isOpen ? (
-                <ImMenu4 className="h-4 w-4 font-black" />
-              ) : (
-                <ImMenu3 className="h-4 w-4 font-black" />
-              )}
+              <Menu className="h-4 w-4 font-black" />
             </Button>
           ) : null}
           <Button variant="ghost" asChild>
@@ -58,13 +55,13 @@ export function MainNav({
             <ul className="flex gap-4">
               {menuItems && menuItems?.length > 0
                 ? menuItems?.map((item: ItemProps, index: number) => (
-                    <li>
+                    <li key={`${item}-${index}`}>
                       <NavLink
                         key={`${item.href}-${index}`}
                         to={item.href}
                         aria-label={item.label}
                         className={({ isActive }) =>
-                          isActive ? "text-blue-500 rounded-md" : ""
+                          isActive ? "text-blue-600 rounded-md" : ""
                         }
                       >
                         <Button variant="link" className="text-lg capitalize">
@@ -77,18 +74,32 @@ export function MainNav({
             </ul>
           </div>
         </div>
+        {/* if a user is authenticated, show the side content drawer icon else show the drowpdown menu for mobile nav */}
         <div>
-          <Button
-            // onClick={handleNavToggle}
-            size="icon"
-            variant="ghost"
-            aria-label="toggle navigation"
-            className="lg:hidden"
-            id="navbar"
-            asChild
-          >
-            <RiMenuFoldLine className="h-4 w-4" />
-          </Button>
+          {authApp ? (
+            <Button
+              size="icon"
+              variant="ghost"
+              aria-label="toggle navigation"
+              className="lg:hidden"
+              id="navbar"
+              asChild
+            >
+              <RiMenuFoldLine className="h-4 w-4" />
+            </Button>
+          ) : (
+            <Button
+              onClick={handleNavToggle}
+              size="icon"
+              variant="ghost"
+              aria-label="toggle navigation"
+              className="lg:hidden"
+              id="navbar"
+              asChild
+            >
+              <Menu className="h-4 w-4 font-black" />
+            </Button>
+          )}
 
           <div className="lg:flex gap-4 hidden items-center">
             <Link prefetch="intent" to="/sign-in">

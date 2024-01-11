@@ -1,3 +1,4 @@
+import React from "react";
 import { Bell, Star } from "lucide-react";
 import { Container } from "~/components/container";
 import { PageTitle } from "~/components/page-title";
@@ -5,10 +6,19 @@ import {
   UserCard,
   Chart,
   SubscriptionCard,
-  TrackCard,
+  Card,
 } from "~/components/dashboard";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "~/components/ui/select";
 
 export default function CourseCatalog() {
+  const [tab, setTab] = React.useState("chart");
   return (
     <Container className="lg:p-8 max-w-6xl">
       <PageTitle title="Dashboard" className="mb-12" />
@@ -16,12 +26,24 @@ export default function CourseCatalog() {
         <div className="flex gap-10 flex-col">
           <UserCard />
           <div>
-            <h1 className="text-2xl font-black mb-4">Tracks</h1>
-            <ul className="space-y-5">
-              {tracks.map((course, i) => (
-                <TrackCard i={i} course={course} />
-              ))}
-            </ul>
+            <Tabs defaultValue="tracks">
+              <TabsList className="w-full flex bg-inherit justify-start mb-6">
+                <TabsTrigger value="tracks" className="text-xl">
+                  Tracks
+                </TabsTrigger>
+                <TabsTrigger value="courses" className="text-xl">
+                  Courses
+                </TabsTrigger>
+              </TabsList>
+              <TabsContent value="tracks">
+                <ul className="space-y-5">
+                  {tracks.map((course, i) => (
+                    <Card i={i} course={course} />
+                  ))}
+                </ul>
+              </TabsContent>
+              <TabsContent value="courses">courses</TabsContent>
+            </Tabs>
           </div>
         </div>
 
@@ -34,45 +56,69 @@ export default function CourseCatalog() {
               <Bell />
               <div className="bg-blue-600 h-2 w-2 rounded-full absolute top-0 right-0"></div>
             </div>
-            <div className="flex justify-evenly gap-6 ">
+
+            <div className="flex h-12 w-full gap-4 justify-between">
               <div className="flex items-center gap-4 bg-slate-300 rounded-md py-2 px-4">
                 <h2 className="font-black text-[2rem]">3</h2>
-                <p>
-                  courses <br /> completed
-                </p>
+                <p>my courses</p>
+              </div>
+              <div className="flex items-center gap-4 bg-slate-300 rounded-md py-2 px-4">
+                <h2 className="font-black text-[2rem]">3</h2>
+                <p>courses completed</p>
               </div>
               <div className="flex items-center gap-4 bg-slate-300 rounded-md py-2 px-4">
                 <h2 className="font-black text-[2rem]">2</h2>
-                <p>
-                  courses <br /> in progress
-                </p>
+                <p>courses in progress</p>
               </div>
+            </div>
+            <div className="flex h-12 items-center gap-4 bg-slate-300 rounded-md py-2 px-4">
+              <h2 className="font-black text-[2rem]">3</h2>
+              <p>
+                courses <br /> completed
+              </p>
             </div>
           </div>
           <div>
-            <h1 className="text-2xl font-black mb-4">Your statistics</h1>
-            <Chart />
+            {/* <h1 className="text-2xl font-black mb-4">Your statistics</h1> */}
+            <Tabs defaultValue="chart">
+              <TabsList className="w-full flex bg-inherit justify-start mb-6">
+                <div className="flex justify-between items-center w-full">
+                  <div>
+                    <TabsTrigger
+                      onClick={() => setTab("chart")}
+                      value="chart"
+                      className="text-xl"
+                    >
+                      Learning hours
+                    </TabsTrigger>
+                    <TabsTrigger
+                      onClick={() => setTab("my-courses")}
+                      value="my-courses"
+                      className="text-xl"
+                    >
+                      My courses
+                    </TabsTrigger>
+                  </div>
+                  {tab === "chart" ? (
+                    <Select>
+                      <SelectTrigger className="w-32">
+                        <SelectValue placeholder="weekly" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="weekly">weekly</SelectItem>
+                        <SelectItem value="monthly">monthly</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  ) : null}
+                </div>
+              </TabsList>
+              <TabsContent value="chart" className="w-full">
+                <Chart />
+              </TabsContent>
+              <TabsContent value="my-courses">my courses</TabsContent>
+            </Tabs>
           </div>
           <SubscriptionCard />
-          {/* <div className="flex justify-between gap-2 bg-slate-300/50 rounded-md  p-4">
-            <div className="flex flex-col gap-2">
-              <h2 className="font-black text-[1.3rem]">Learn even more!</h2>
-              <p>
-                Subscribe for <span className="text-xl font-bold">$15</span>
-                /month to unlock all courses.
-              </p>
-              <Button size="lg" className="text-lg self-start">
-                Go Premium
-              </Button>
-            </div>
-            <img
-              src={lightbulb}
-              alt="Light Bulb"
-              width={150}
-              height={100}
-              className="rounded-md"
-            />
-          </div> */}
         </div>
       </div>
     </Container>

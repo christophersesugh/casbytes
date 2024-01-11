@@ -39,7 +39,7 @@ export function Contact() {
             variant="link"
             className="p-0 m-0"
             asChild
-            aria-label="Twitter"
+            aria-label="X (formerly Twitter)"
           >
             <Link to="https://twitter.com/casbytes">
               <FaXTwitter className="text-xl" />

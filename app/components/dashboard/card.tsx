@@ -4,7 +4,7 @@ import { Link } from "@remix-run/react";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 
-export function TrackCard({ i, course }: { i: number; course: any }) {
+export function Card({ i, course }: { i: number; course: any }) {
   return (
     <li className="flex flex-wrap md:flex-nowrap gap-2 justify-between items-center bg-slate-300/50 rounded-md p-2 relative">
       <div className="absolute rounded-tl rounded-br text-slate-50 text-xs p-1 bg-blue-600 top-0 left-0">
