@@ -8,6 +8,7 @@ import {
   useRouteError,
 } from "@remix-run/react";
 import stylesheet from "~/tailwind.css";
+import markdownStyles from "~/markdown.css";
 import { RootLayout } from "./components/layouts";
 import { RootErrorUI } from "./components/root-error-ui";
 
@@ -28,6 +29,7 @@ export const links: LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Fira+Code&family=Mulish&display=swap",
   },
   { rel: "stylesheet", href: stylesheet },
+  { rel: "stylesheet", href: markdownStyles },
 ];
 
 type DocumentProps = {
@@ -43,7 +45,7 @@ function Document({ children }: DocumentProps) {
         <Meta />
         <Links />
       </head>
-      <body className="bg-slate-100">
+      <body className="bg-slate-50">
         {children}
         <ScrollRestoration />
         <Scripts />

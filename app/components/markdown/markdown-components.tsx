@@ -4,7 +4,7 @@ import { Link } from "@remix-run/react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import clsx from "clsx";
-import { AspectRatio } from "../custom-aspect-ratio";
+import { AspectRatio } from "../ui/aspect-ratio";
 
 type ElemProps = {
   children?: React.ReactNode;
@@ -24,7 +24,7 @@ export function P(props: ElemProps): React.ReactElement {
 export function H1(props: ElemProps): React.ReactElement {
   return (
     <h1
-      className="text-3xl mt-5 mb-4 capitalize dark:text-amber-600 text-amber-700"
+      className="text-3xl mt-5 mb-4 capitalize dark:text-white text-blue-700"
       {...props}
     />
   );
@@ -33,7 +33,7 @@ export function H1(props: ElemProps): React.ReactElement {
 export function H2(props: ElemProps): React.ReactElement {
   return (
     <h2
-      className="text-2xl mt-4 mb-3 capitalize dark:text-amber-600 text-amber-700"
+      className="text-2xl mt-4 mb-3 capitalize dark:text-white text-blue-700"
       {...props}
     />
   );
@@ -41,7 +41,7 @@ export function H2(props: ElemProps): React.ReactElement {
 export function H3(props: ElemProps): React.ReactElement {
   return (
     <h3
-      className="text-xl mt-3 mb-2 capitalize dark:text-amber-600 text-amber-700"
+      className="text-xl mt-3 mb-2 capitalize dark:text-white text-blue-700"
       {...props}
     />
   );
@@ -59,7 +59,7 @@ export function H4(props: ElemProps): React.ReactElement {
 export function H5(props: ElemProps): React.ReactElement {
   return (
     <h4
-      className="text-lg mt-3 mb-2 capitalize dark:text-amber-600 text-amber-700"
+      className="text-lg mt-3 mb-2 capitalize dark:text-white text-blue-700"
       {...props}
     />
   );
@@ -68,7 +68,7 @@ export function H5(props: ElemProps): React.ReactElement {
 export function H6(props: ElemProps): React.ReactElement {
   return (
     <h4
-      className="text-lg mt-3 mb-2 capitalize dark:text-amber-600 text-amber-700"
+      className="text-lg mt-3 mb-2 capitalize dark:text-white text-blue-700"
       {...props}
     />
   );
@@ -87,11 +87,14 @@ export function OL(props: ElemProps): React.ReactElement {
 export function BlockQuote(props: ElemProps): React.ReactElement {
   return (
     <blockquote
-      className=" bg-blue-200 border-l-8 border-blue-500 text-black p-4 my-6 rounded-md"
+      className="relative bg-blue-200 border-l-8 border-blue-500 text-black p-4 my-6 rounded-md"
       {...props}
     >
-      <BsInfoCircle title="Info" className="w-6 h-6 inline mb-2" />
-      {props.children}
+      <BsInfoCircle
+        title="Info"
+        className="w-4 h-4 inline mb-2 -p-6 absolute top-1 left-1"
+      />
+      <div className="mt-2">{props.children}</div>
     </blockquote>
   );
 }

@@ -1,10 +1,9 @@
-import React from "react";
 import { Link } from "@remix-run/react";
 import { Zoom, Slide, Fade } from "react-awesome-reveal";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import { Container } from "../container";
+import { Button } from "../ui/button";
 import elearning from "~/assets/elearning.png";
-import { Button } from "../custom-button";
 
 export function Header() {
   return (
@@ -16,12 +15,12 @@ export function Header() {
           <h1 className="text-2xl md:text-3xl font-black max-w-md text-center md:text-left mb-4">
             Unleash the Power of Success in
             <span className="text-blue-700"> Software Engineering</span> with
-            <span className="text-purple-500"> CASBytes</span>.
+            <span className="text-stone-600"> CASBytes</span>.
           </h1>
           <Zoom triggerOnce duration={300} className="hidden md:block">
             <h2 className="text-xl my-12 font-black max-w-md text-center md:text-left">
               Begin Your Transformational Odyssey: Explore CASBytes'
-              <span className="text-pink-500"> Leading-Edge Curriculum.</span>
+              <span className="text-zinc-600"> Leading-Edge Curriculum.</span>
             </h2>
           </Zoom>
           <Slide cascade triggerOnce duration={300}>

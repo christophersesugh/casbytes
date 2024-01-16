@@ -23,6 +23,7 @@ export function NavBar({ menuItems, isNavOpen, setIsNavOpen }: NavBarProps) {
     <>
       <MainNav
         isOpen={isNavOpen}
+        menuItems={menuItems}
         authApp={authApp}
         handleNavToggle={handleNavToggle}
       />
