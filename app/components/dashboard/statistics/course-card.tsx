@@ -4,7 +4,7 @@ import { Button } from "~/components/ui/button";
 
 export function CourseCard({ i, course }: { i: number; course: any }) {
   return (
-    <li className="flex flex-wrap md:flex-nowrap gap-2 justify-between items-center bg-slate-300/50 rounded-md p-2 relative">
+    <li className="flex flex-col sm:flex-row gap-2 justify-between sm:items-center bg-slate-300/50 rounded-md p-2 relative">
       <div className="absolute rounded-tl rounded-br text-slate-50 text-xs p-1 bg-stone-600 top-0 left-0">
         {i + 1}
       </div>
@@ -14,7 +14,7 @@ export function CourseCard({ i, course }: { i: number; course: any }) {
           <h2 className="font-black capitalize ml-6 mb-2">{course.title}</h2>
         </div>
       </div>
-      <div className="flex gap-6">
+      <div className="flex justify-between gap-6">
         <div className="text-xs ">
           {i % 2 === 0 ? (
             <div className="flex gap-2 items-center">

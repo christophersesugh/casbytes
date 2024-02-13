@@ -1,14 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { SearchInput } from "./search-input";
 import { CourseCard } from "..";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "~/components/ui/dialog";
-import { TrackCard } from "./track-card";
 
 export function Courses() {
   return (

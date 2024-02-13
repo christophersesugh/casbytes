@@ -60,14 +60,17 @@ export function NotificationMenu() {
                         variant="ghost"
                         size="icon"
                         className="text-blue-600"
+                        disabled={i >= 3}
                       >
-                        {i < 3 ? <CheckCheck size={15} /> : <Eye size={15} />}
+                        <CheckCheck size={15} />
                       </Button>
                     </TooltipTrigger>
 
-                    <TooltipContent>
-                      {i < 3 ? <p>Mark as read.</p> : <p>Viewed.</p>}
-                    </TooltipContent>
+                    {i < 3 ? (
+                      <TooltipContent>
+                        <p>Mark as read.</p>
+                      </TooltipContent>
+                    ) : null}
                   </Tooltip>
                   <Tooltip>
                     <TooltipTrigger asChild>

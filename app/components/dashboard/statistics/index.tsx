@@ -14,7 +14,7 @@ export function Statistics() {
   return (
     <Tabs defaultValue="chart">
       <TabsList className="w-full flex bg-inherit justify-start mb-6">
-        <div className="flex justify-between items-center w-full">
+        <div className="flex flex-wrap justify-between items-center w-full">
           <div>
             <TabsTrigger
               onClick={() => setTab("chart")}

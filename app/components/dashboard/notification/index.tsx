@@ -5,14 +5,18 @@ import { DropdownMenu } from "~/components/ui/dropdown-menu";
 
 export function Notification() {
   return (
-    <div className="flex flex-col-reverse sm:flex-row items-start sm:justify-between gap-4 bg-slate-200 rounded-md p-2">
-      <CourseBadge />
-      <CourseBadge />
-      <CourseBadge />
-      <DropdownMenu>
-        <NotificationMenuTrigger />
-        <NotificationMenu />
-      </DropdownMenu>
+    <div className="flex items-start justify-between gap-4 bg-slate-200 rounded-md p-2 relative">
+      <div className="flex-1 flex flex-wrap gap-4">
+        <CourseBadge />
+        <CourseBadge />
+        <CourseBadge />
+      </div>
+      <div className="absolute sm:static -top-1.5 -right-1.5">
+        <DropdownMenu>
+          <NotificationMenuTrigger />
+          <NotificationMenu />
+        </DropdownMenu>
+      </div>
     </div>
   );
 }
