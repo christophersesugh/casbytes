@@ -18,8 +18,8 @@ export function ModuleCard({ i }: any) {
         </div>
         <div className="flex flex-col justify-between items-center">
           <Progress value={i < 2 ? 34 : 0} />
-          <Button asChild>
-            <Link to={`/course/1`}>
+          <Button asChild className="bg-zinc-600">
+            <Link to={`/module/1`}>
               {i < 2 ? (
                 <>
                   <CheckCheck className="mr-4" /> Completed

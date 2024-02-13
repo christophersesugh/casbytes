@@ -24,10 +24,10 @@ export function MarkAsCompletedButton({
       {...props}
       asChild
     >
-      <>
+      <div>
         <CheckCircle className="text-blue-500 hover:text-white-100 inline mr-2" />
         mark as completed
-      </>
+      </div>
     </Button>
   );
 }

@@ -1,4 +1,4 @@
-import { ModuleCard } from ".";
+import { ModuleCard } from "./module-card";
 import { ContentIntroductionBadge } from "../content-intro-badge";
 
 export function Modules() {

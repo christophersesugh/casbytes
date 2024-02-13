@@ -1,14 +1,16 @@
 import { CourseTitle } from "../course-title";
-import { Courses, Status, TrophyCarbinet } from ".";
+import { Courses } from "./courses";
+import { Status } from "./status";
+import { TrophyCarbinet } from "./trophy-carbinet";
 
-export function SideContent() {
+export function CourseSideContent() {
   return (
-    <div>
+    <>
       <CourseTitle title="Trophy cabinet" />
       <TrophyCarbinet />
       <CourseTitle title="Courses" />
       <Status />
       <Courses />
-    </div>
+    </>
   );
 }

@@ -12,12 +12,7 @@ export function SignOutButton({
   icon?: React.ReactNode;
 }) {
   return (
-    <Form
-      method="post"
-      action="/sign-out"
-      data-testid="sign-out-form"
-      className="flex justify-start"
-    >
+    <Form method="post" action="/sign-out" data-testid="sign-out-form">
       <Button
         type="submit"
         variant="link"

@@ -4,6 +4,11 @@ import { SideBarContent } from "./side-bar-content";
 import { Link } from "@remix-run/react";
 import { Tooltip } from "@radix-ui/react-tooltip";
 import { Button } from "~/components/ui/button";
+import {
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "~/components/ui/tooltip";
 
 export function SideBar({
   menuItems,
@@ -19,25 +24,32 @@ export function SideBar({
       {...props}
     >
       <SideBarContainer>
-        <SideBarContent>
-          {menuItems.map((item) => (
-            // <Tooltip key={item.label}>
-            <Button
-              variant="link"
-              className="text-slate-200 hover:text-white"
-              asChild
-            >
-              <Link
-                to={item.label}
-                className="flex gap-4 capitalize text-xl items-center"
-              >
-                {item.icon}
-                {isOpen && item.label}
-              </Link>
-            </Button>
-            // </Tooltip>
-          ))}
-        </SideBarContent>
+        <TooltipProvider>
+          <SideBarContent>
+            {menuItems.map((item) => (
+              <Tooltip>
+                <TooltipContent className="text-lg">
+                  {item.label}
+                </TooltipContent>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="link"
+                    className="text-slate-200 hover:text-white"
+                    asChild
+                  >
+                    <Link
+                      to={item.label}
+                      className="flex gap-4 capitalize text-xl items-center"
+                    >
+                      {item.icon}
+                      {isOpen && item.label}
+                    </Link>
+                  </Button>
+                </TooltipTrigger>
+              </Tooltip>
+            ))}
+          </SideBarContent>
+        </TooltipProvider>
       </SideBarContainer>
     </SideBarProvider>
   );

@@ -32,7 +32,7 @@ export function Pagination({
 }: PaginationProps) {
   const pagination = useFetcher();
   return (
-    <pagination.Form className="flex flex-wrap justify-between">
+    <pagination.Form className="flex flex-col gap-4 md:flex-row justify-between">
       <Button
         variant="outline"
         onClick={previousItemOnClick}
@@ -41,9 +41,9 @@ export function Pagination({
         asChild
         className="flex items-center"
       >
-        {/* <Link prefetch="intent" to={previousTo}> */}
-        <RiArrowLeftSLine className="inline h-6 w-6" /> {previousItem}
-        {/* </Link> */}
+        <div>
+          <RiArrowLeftSLine className="inline h-6 w-6" /> {previousItem}
+        </div>
       </Button>
       <MarkAsCompletedButton
         // to={markAsCompletedTo}
@@ -58,9 +58,9 @@ export function Pagination({
         asChild
         className="flex items-center"
       >
-        {/* <Link prefetch="intent" to={nextTo}> */}
-        {nextItem} <RiArrowRightSLine className="inline h-6 w-6" />
-        {/* </Link> */}
+        <div>
+          {nextItem} <RiArrowRightSLine className="inline h-6 w-6" />
+        </div>
       </Button>
     </pagination.Form>
   );

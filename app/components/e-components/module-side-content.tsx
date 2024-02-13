@@ -1,28 +1,28 @@
 import React from "react";
 import { CourseTitle } from "../course-title";
-import { Status } from "../track";
+import { Status } from "./status";
 import { CheckCircle, CircleDashed, Lock } from "lucide-react";
 import { Button } from "../ui/button";
 
-export function SideContent() {
+export function ModuleSideContent() {
   return (
     <>
       <CourseTitle title="Functions" />
       <Status />
-      <ul className="grid grid-cols-2 gap-4 p-2 mb-4">
+      <ul className="grid grid-cols-1 gap-4 p-2 mb-4">
         {Array.from({ length: 25 }).map((_, i) => (
           <Button
             variant="secondary"
             className="flex justify-start bg-slate-300 hover:bg-slate-300/50 text-black"
             asChild
           >
-            <li key={i} className="flex items-center text-lg">
+            <li key={i} className="flex items-center text-lg cursor-pointer">
               {i < 2 ? (
                 <CheckCircle className="mr-4 text-blue-600" />
               ) : (
                 <Lock className="mr-4" />
               )}{" "}
-              Javascript
+              function prototypes
             </li>
           </Button>
         ))}

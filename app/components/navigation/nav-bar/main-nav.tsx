@@ -1,11 +1,13 @@
 import React from "react";
-import { Link, NavLink, useMatches } from "@remix-run/react";
+import { Link, NavLink, useMatch, useMatches } from "@remix-run/react";
 import { Menu, UserCircle2, X } from "lucide-react";
 import logo from "~/assets/logo.png";
+import icon from "~/assets/icon.png";
 import { cn } from "~/libs/shadcn";
 import { RiMenuFoldLine } from "react-icons/ri";
 import { ImMenu3, ImMenu4 } from "react-icons/im";
 import { Button } from "~/components/ui/button";
+import { SheetTrigger } from "~/components/ui/sheet";
 
 type MainNavProps = {
   menuItems?: { label: string; href: string }[];
@@ -25,11 +27,22 @@ export function MainNav({
   authApp,
   handleNavToggle,
 }: MainNavProps) {
+  const matches = useMatches();
+  const dashboard = matches.some((match) =>
+    match.id.includes("dashboard") ? true : false,
+  );
   return (
     <nav className={cn("bg-[#E1F4FF]", authApp ? "lg:hidden block" : "")}>
-      <div className="flex items-center justify-between py-8 px-4 xl:px-0 max-w-6xl mx-auto">
+      <div
+        className={cn(
+          "flex items-center justify-between py-8 px-4 xl:px-0 max-w-6xl mx-auto",
+          {
+            "p-4": authApp,
+          },
+        )}
+      >
         {/* if a user is authenticated, show the drowpdown menu for mobile nav before the logo */}
-        <div className={cn("flex", authApp ? "gap-4" : "")}>
+        <div className={cn("flex", authApp ? "gap-2" : "")}>
           {authApp ? (
             <Button
               onClick={handleNavToggle}
@@ -44,8 +57,13 @@ export function MainNav({
             </Button>
           ) : null}
           <Button variant="ghost" asChild>
-            <Link to="/">
-              <img src={logo} alt="CASBytes" width={200} />
+            <Link to={authApp ? "/dashboard" : "/"}>
+              <img
+                src={authApp ? icon : logo}
+                alt="CASBytes"
+                width={authApp ? 40 : 200}
+                height={authApp ? 40 : 200}
+              />
             </Link>
           </Button>
         </div>
@@ -77,16 +95,21 @@ export function MainNav({
         {/* if a user is authenticated, show the side content drawer icon else show the drowpdown menu for mobile nav */}
         <div>
           {authApp ? (
-            <Button
-              size="icon"
-              variant="ghost"
-              aria-label="toggle navigation"
-              className="lg:hidden"
-              id="navbar"
+            <SheetTrigger
+              className={cn("h-8 w-8", dashboard ? "hidden" : "")}
               asChild
             >
-              <RiMenuFoldLine className="h-4 w-4" />
-            </Button>
+              <Button
+                size="icon"
+                variant="ghost"
+                aria-label="toggle sidebar"
+                className="lg:hidden"
+                id="navbar"
+                asChild
+              >
+                <RiMenuFoldLine className="h-4 w-4" />
+              </Button>
+            </SheetTrigger>
           ) : (
             <Button
               onClick={handleNavToggle}

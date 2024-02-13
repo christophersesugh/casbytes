@@ -10,12 +10,13 @@ import {
 } from "lucide-react";
 import { cn } from "~/libs/shadcn";
 import { NavBar, SideBar } from "../navigation";
+import { Sheet } from "../ui/sheet";
 
 export function AuthAppLayout() {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
 
   return (
-    <>
+    <Sheet>
       <NavBar
         menuItems={menuItems}
         isNavOpen={isNavOpen}
@@ -34,7 +35,7 @@ export function AuthAppLayout() {
       >
         <Outlet />
       </div>
-    </>
+    </Sheet>
   );
 }
 

@@ -1,6 +1,4 @@
-import React from "react";
 import { Link } from "@remix-run/react";
-import { TbProgressX } from "react-icons/tb";
 
 import { CircleOff } from "lucide-react";
 import {
@@ -30,7 +28,7 @@ export function Quiz({ quiz }: { quiz: any }) {
               variant="link"
               asChild
             >
-              <Link to="/lesson/1/quiz" className="cursor-pointer">
+              <Link to="/lesson/quiz/1" className="cursor-pointer">
                 forEach HOF quiz
               </Link>
             </Button>

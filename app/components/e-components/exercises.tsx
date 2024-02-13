@@ -28,7 +28,9 @@ export function Exercises() {
                   variant="link"
                   className="text-blue-600 text-md capitalize p-0"
                 >
-                  <Link to={`/lesson/${course.id}/1`}>{course.title}</Link>
+                  <Link to={`/lesson/${course.id}/exercise/1`}>
+                    {course.title}
+                  </Link>
                 </Button>
               </TableCell>
 

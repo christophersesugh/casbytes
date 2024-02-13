@@ -13,7 +13,7 @@ export function SideBarContent({ ...props }) {
   return (
     <>
       <div className="flex-col flex h-32 justify-between items-center gap-4 p-4 bg-gray-300">
-        <Link to="/course-catalog">
+        <Link to="/dashboard">
           <img
             src={isOpen ? logo : icon}
             alt="CASBytes"
